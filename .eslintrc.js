@@ -20,7 +20,8 @@ module.exports = {
   "rules": {
     "indent": [
       "error",
-      2
+      2,
+      { "SwitchCase": 1 }
     ],
     "linebreak-style": [
       "error",
@@ -29,6 +30,9 @@ module.exports = {
     "quotes": [
       "error",
       "single"
+    ],
+    "react/prop-types": [
+      "off"
     ],
     "semi": [
       "error",
