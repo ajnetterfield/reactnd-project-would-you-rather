@@ -4,12 +4,12 @@ import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-d
 import { connect } from 'react-redux';
 
 import AddQuestion from './AddQuestion';
-import Home from './Home';
+import HomePage from './HomePage';
 import Leaderboard from './Leaderboard';
 import Login from './Login';
 import Nav from './Nav';
 import NoMatch from './NoMatch';
-import Question from './Question';
+import QuestionPage from './QuestionPage';
 
 import { getUsers } from '../actions/users';
 
@@ -34,10 +34,10 @@ class App extends React.Component {
 
                   <div className="content">
                     <Switch>
-                      <Route path="/" exact component={Home} />
+                      <Route path="/" exact component={HomePage} />
                       <Route path="/add" component={AddQuestion} />
                       <Route path="/leaderboard" component={Leaderboard} />
-                      <Route path="/questions/:question_id" component={Question} />
+                      <Route path="/questions/:question_id" component={QuestionPage} />
                       <Route component={NoMatch} />
                     </Switch>
                   </div>
@@ -47,7 +47,8 @@ class App extends React.Component {
                   <Route path="/" exact component={Login} />
                   <Redirect to="/" />
                 </Switch>
-              )}
+              )
+            }
           </div>
         </Fragment>
       </Router>

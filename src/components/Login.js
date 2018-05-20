@@ -35,7 +35,9 @@ class Login extends React.Component {
   }
 
   render() {
-    const userIds = Object.keys(this.props.users);
+    const { loading, users } = this.props;
+
+    const userIds = loading ? [] : Object.keys(users);
 
     return (
       <div className="login">
@@ -51,12 +53,12 @@ class Login extends React.Component {
               value={this.state.userId}
             >
               <option value="">
-                {userIds.length > 0 ? 'Please select a user' : 'Loading...'}
+                {loading ? 'Loading...' : 'Please select a user'}
               </option>
 
               {userIds.map(userId => (
                 <option key={userId} value={userId}>
-                  {this.props.users[userId].name}
+                  {users[userId].name}
                 </option>
               ))}
             </select>
@@ -71,6 +73,7 @@ class Login extends React.Component {
 
 const mapStateToProps = ({ users }) => {
   return {
+    loading: users === null,
     users
   };
 };

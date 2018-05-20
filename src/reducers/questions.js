@@ -1,9 +1,9 @@
 import { CLEAR_QUESTIONS, RECEIVE_QUESTIONS } from '../actions/questions';
 
-export default function questions(state = {}, action) {
+export default function questions(state = null, action) {
   switch (action.type) {
     case CLEAR_QUESTIONS:
-      return {};
+      return null;
 
     case RECEIVE_QUESTIONS:
       return {

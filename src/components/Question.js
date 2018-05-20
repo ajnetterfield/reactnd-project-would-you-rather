@@ -1,13 +1,25 @@
 import React from 'react';
 
-class Question extends React.Component {
-  render() {
-    return (
-      <div className="question">
-        Question
-      </div>
-    );
-  }
-}
+import QuestionOption from './QuestionOption';
+
+const Question = ({ answer, question }) => (
+  <div className="question">
+    {'Would you rather '}
+
+    <QuestionOption
+      isAnswer={answer === 'optionOne'}
+      option={question.optionOne}
+    />
+
+    {' or '}
+
+    <QuestionOption
+      isAnswer={answer === 'optionTwo'}
+      option={question.optionTwo}
+    />
+
+    {' ?'}
+  </div>
+);
 
 export default Question;

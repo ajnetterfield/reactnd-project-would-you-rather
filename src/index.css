@@ -25,7 +25,7 @@ html {
 
 body {
   background-color: #fff;
-  color: #333;
+  color: #373f51; /* gray (darker) */
   font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
   height: 100%;
   margin: 0;
@@ -59,6 +59,10 @@ h3 {
   padding: 2rem;
 }
 
+.no-match {
+  text-align: center;
+}
+
 /* Utilities
 /******************************************************************************/
 
@@ -66,7 +70,7 @@ h3 {
   width: 100%;
 }
 
-/* Elements
+/* Input
 /******************************************************************************/
 
 .input {
@@ -83,8 +87,8 @@ h3 {
 }
 
 .input.error {
-  border: 1px solid #e15554;
-  color: #e15554;
+  border: 1px solid #e15554; /* red */
+  color: #e15554; /* red */
 }
 
 .input:focus {
@@ -106,17 +110,139 @@ h3 {
 
 .input.button.blue {
   background-color: #2d7dd2; /* blue */
-  border-color: #2d7dd2;
+  border-color: #2d7dd2; /* blue */
   color: #fff;
 }
 
 .input.button.blue:hover {
   background-color: #2567ac; /* two shades darker than blue (#2d7dd2)  */
-  border-color: #2567ac;
+  border-color: #2567ac; /* two shades darker than blue (#2d7dd2)  */
 }
 
 .input.select {
   cursor: pointer;
+}
+
+/* Pill
+/******************************************************************************/
+
+.pill-list {
+  list-style: none;
+  margin: 0 0 1rem 0;
+  padding: 0;
+}
+
+.pill-list > .pill-list-item {
+  display: inline-block;
+}
+
+.pill-list > .pill-list-item > .pill-button {
+  background-color: #fff;
+  background: none;
+  border: none;
+  color: #373f51; /* gray (darker) */
+  cursor: pointer;
+  display: block;
+  font-size: 1rem;
+  padding: 1rem;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out;
+}
+
+.pill-list > .pill-list-item > .pill-button:hover {
+  color: #2d7dd2; /* blue */
+}
+
+.pill-list > .pill-list-item > .pill-button.green:hover {
+  color: #3bb273; /* green */
+}
+
+.pill-list > .pill-list-item > .pill-button.red:hover {
+  color: #e15554; /* red */
+}
+
+.pill-list > .pill-list-item.active > .pill-button {
+  background-color: #2d7dd2; /* blue */
+  color: #fff;
+  display: block;
+  padding: 1rem;
+  text-decoration: none;
+}
+
+.pill-list > .pill-list-item.active > .pill-button.green {
+  background-color: #3bb273; /* green */
+  color: #fff;
+}
+
+.pill-list > .pill-list-item.active > .pill-button.red {
+  background-color: #e15554; /* red */
+  color: #fff;
+}
+
+/* Question
+/******************************************************************************/
+
+.question-page {
+  text-align: center;
+}
+
+.question-page > .question-details > .avatar {
+  border-radius: 5rem;
+  height: 10rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.question-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.question-list > .question-list-item {
+  background-color: #ecedef;
+  display: block;
+  margin-bottom: 1rem;
+  transition: box-shadow 0.15s ease-in-out;
+}
+
+.question-list > .question-list-item:hover {
+  box-shadow: 0.125rem 0.125rem 0.5rem 0.0625rem rgba(0, 0, 0, 0.25);
+}
+
+.question-list > .question-list-item > .question-link {
+  color: inherit;
+  display: block;
+  text-decoration: none;
+}
+
+.question {
+  font-size: 1.125rem;
+  line-height: 2.125rem;
+  padding: 1rem;
+}
+
+.question > .question-option {
+  background-color: #6d7380; /* gray (dark) */
+  border-radius: 0.25rem;
+  color: #fff;
+  margin: 0;
+  padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+  white-space: nowrap;
+}
+
+.question > .question-option.answer {
+  background-color: #3bb273; /* green */
+}
+
+.question-stats {
+  color: #9196a0; /* gray (medium) */
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin: 0.5rem 0 0 0;
+}
+
+.question-stats > p {
+  margin: 0.25rem 0 0 0;
 }
 
 /* Login
@@ -162,7 +288,6 @@ h3 {
 }
 
 .nav > .nav-list {
-  clear: both;
   list-style: none;
   margin: 0;
   padding: 0;
