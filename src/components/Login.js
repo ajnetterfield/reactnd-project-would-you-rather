@@ -69,8 +69,14 @@ class Login extends React.Component {
   }
 }
 
+const mapStateToProps = ({ users }) => {
+  return {
+    users
+  };
+};
+
 const mapDispatchToProps = {
   handleLogin
 };
 
-export default connect(null, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

@@ -1,6 +1,6 @@
 import LoadingBar from 'react-redux-loading';
 import React, { Fragment } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import AddQuestion from './AddQuestion';
@@ -43,7 +43,10 @@ class App extends React.Component {
                   </div>
                 </Fragment>
               ) : (
-                <Login users={this.props.users} />
+                <Switch>
+                  <Route path="/" exact component={Login} />
+                  <Redirect to="/" />
+                </Switch>
               )}
           </div>
         </Fragment>
@@ -52,10 +55,9 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = ({ authedUser, users }) => {
+const mapStateToProps = ({ authedUser }) => {
   return {
-    authedUser,
-    users
+    authedUser
   };
 };
 

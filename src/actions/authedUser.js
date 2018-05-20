@@ -14,7 +14,6 @@ export const setAuthedUser = (id) => ({
 
 export const handleLogin = (id) => (dispatch) => {
   dispatch(setAuthedUser(id));
-
   return dispatch(getQuestions());
 };
 
