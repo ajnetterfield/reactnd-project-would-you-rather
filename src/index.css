@@ -167,6 +167,7 @@ h3 {
   display: block;
   padding: 1rem;
   text-decoration: none;
+  transition: unset;
 }
 
 .pill-list > .pill-list-item.active > .pill-button.green {
