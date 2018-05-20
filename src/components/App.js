@@ -19,10 +19,12 @@ class App extends React.Component {
   }
 
   render() {
+    const loadingBarColor = this.props.authedUser ? '#fff' : '#2d7dd2';
+
     return (
       <Router>
         <Fragment>
-          <LoadingBar />
+          <LoadingBar style={{ backgroundColor: loadingBarColor, height: '0.25rem' }} />
 
           <div className="app">
             {this.props.authedUser
@@ -30,13 +32,15 @@ class App extends React.Component {
                 <Fragment>
                   <Nav />
 
-                  <Switch>
-                    <Route path="/" exact component={Home} />
-                    <Route path="/add" component={AddQuestion} />
-                    <Route path="/leaderboard" component={Leaderboard} />
-                    <Route path="/questions/:question_id" component={Question} />
-                    <Route component={NoMatch} />
-                  </Switch>
+                  <div className="content">
+                    <Switch>
+                      <Route path="/" exact component={Home} />
+                      <Route path="/add" component={AddQuestion} />
+                      <Route path="/leaderboard" component={Leaderboard} />
+                      <Route path="/questions/:question_id" component={Question} />
+                      <Route component={NoMatch} />
+                    </Switch>
+                  </div>
                 </Fragment>
               ) : (
                 <Login users={this.props.users} />

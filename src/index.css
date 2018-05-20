@@ -1,10 +1,30 @@
+/* Colors
+/******************************************************************************/
+
+/*
+blue            #2d7dd2
+gray (lighter)  #ecedef
+gray (light)    #c8cacf
+gray (medium)   #9196a0
+gray (dark)     #6d7380
+gray (darker)   #373f51
+green           #3bb273
+purple          #7768ae
+red             #e15554
+yellow          #e1bc29
+*/
+
+/* Shared
+/******************************************************************************/
+
 html {
+  background-color: #fff;
   font-size: 16px;
   height: 100%;
 }
 
 body {
-  background: #ecedef;
+  background-color: #fff;
   color: #333;
   font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
   height: 100%;
@@ -35,29 +55,24 @@ h3 {
   height: 100%;
 }
 
-/* Colors
+.content {
+  padding: 2rem;
+}
+
+/* Utilities
 /******************************************************************************/
 
-/*
-blue            #2d7dd2
-gray (lighter)  #ecedef
-gray (light)    #c8cacf
-gray (medium)   #9196a0
-gray (dark)     #6d7380
-gray (darker)   #373f51
-green           #3bb273
-purple          #7768ae
-red             #e15554
-yellow          #e1bc29
-*/
+.w-100 {
+  width: 100%;
+}
 
-/* Components
+/* Elements
 /******************************************************************************/
 
 .input {
   background-color: #fff;
   border-radius: 0;
-  border: 1px solid #c8cacf;
+  border: 1px solid #c8cacf; /* gray (light) */
   font-size: 1rem;
   height: 2.25rem;
   line-height: 1.5rem;
@@ -90,26 +105,18 @@ yellow          #e1bc29
 }
 
 .input.button.blue {
-  background-color: #2d7dd2;
+  background-color: #2d7dd2; /* blue */
   border-color: #2d7dd2;
   color: #fff;
 }
 
 .input.button.blue:hover {
-  background-color: #2567ac; /* two shades darker than #2d7dd2  */
+  background-color: #2567ac; /* two shades darker than blue (#2d7dd2)  */
   border-color: #2567ac;
 }
 
 .input.select {
   cursor: pointer;
-  padding: 0.3125rem 1.625rem 0.3125rem 0.625rem;
-}
-
-/* Utilities
-/******************************************************************************/
-
-.w-100 {
-  width: 100%;
 }
 
 /* Login
@@ -117,6 +124,7 @@ yellow          #e1bc29
 
 .login {
   align-items: center;
+  background-color: #ecedef; /* gray (lighter) */
   display: flex;
   height: 100%;
   justify-content: center;
@@ -125,7 +133,7 @@ yellow          #e1bc29
 
 .login > .login-form {
   background-color: #fff;
-  border-top-color: #2d7dd2;
+  border-top-color: #2d7dd2; /* blue */
   border-top-style: solid;
   border-top-width: 0.25rem;
   min-width: 20rem;
@@ -141,3 +149,65 @@ yellow          #e1bc29
 .login > .login-form > .login-form-title {
   margin: 0 0 1.5rem 0;
 }
+
+/* Nav
+/******************************************************************************/
+
+.nav {
+  background-color: #2d7dd2; /* gray (darker) */
+  color: #fff;
+  display: flex;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.nav > .nav-list {
+  clear: both;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav > .nav-list.nav-list-left {
+  margin-right: auto;
+}
+
+.nav > .nav-list.nav-list-right {
+  margin-left: auto;
+}
+
+.nav > .nav-list > .nav-list-item {
+  color: #fff;
+  display: inline-block;
+}
+
+.nav > .nav-list > .nav-list-item .fa {
+  height: 1rem;
+  line-height: 1.5rem;
+  margin-right: 0.25rem;
+  vertical-align: bottom !important;
+  width: 1rem;
+}
+
+.nav > .nav-list > .nav-list-item > .nav-list-item-label {
+  padding: 1rem;
+}
+
+.nav > .nav-list > .nav-list-item > .nav-list-item-link {
+  color: #fff;
+  display: block;
+  padding: 1rem;
+  text-decoration: none;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.nav > .nav-list > .nav-list-item > .nav-list-item-link:hover {
+  background-color: #2567ac; /* two shades darker than blue (#2d7dd2)  */
+  color: #fff;
+}
+
+.nav > .nav-list > .nav-list-item > .nav-list-item-link.active {
+  background-color: #2567ac; /* two shades darker than blue (#2d7dd2)  */
+  color: #fff;
+}
+
