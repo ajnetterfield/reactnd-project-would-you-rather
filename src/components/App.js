@@ -24,7 +24,7 @@ class App extends React.Component {
         <Fragment>
           <LoadingBar />
 
-          <div className="container">
+          <div className="app">
             {this.props.authedUser
               ? (
                 <Fragment>
@@ -39,7 +39,7 @@ class App extends React.Component {
                   </Switch>
                 </Fragment>
               ) : (
-                <Login />
+                <Login users={this.props.users} />
               )}
           </div>
         </Fragment>
@@ -48,9 +48,10 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = ({ authedUser }) => {
+const mapStateToProps = ({ authedUser, users }) => {
   return {
-    authedUser
+    authedUser,
+    users
   };
 };
 
