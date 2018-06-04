@@ -1,9 +1,17 @@
 import { showLoading, hideLoading } from 'react-redux-loading';
 
-import { _getQuestions } from '../utils/_DATA.js';
+import { _getQuestions, _saveQuestionAnswer } from '../utils/_DATA.js';
 
+export const ANSWER_QUESTION = 'ANSWER_QUESTION';
 export const CLEAR_QUESTIONS = 'CLEAR_QUESTIONS';
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS';
+
+export const answerQuestion = ({ answer, authedUser, qid }) => ({
+  type: ANSWER_QUESTION,
+  answer,
+  authedUser,
+  qid
+});
 
 export const clearQuestions = () => ({
   type: CLEAR_QUESTIONS
@@ -22,4 +30,9 @@ export const getQuestions = () => (dispatch) => {
       dispatch(receiveQuestions(questions));
       dispatch(hideLoading());
     });
+};
+
+export const handleAnswerQuestion = (info) => (dispatch) => {
+  dispatch(answerQuestion(info));
+  return _saveQuestionAnswer(info);
 };

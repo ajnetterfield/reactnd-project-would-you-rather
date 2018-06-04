@@ -32,6 +32,10 @@ body {
   padding: 0;
 }
 
+button {
+  font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
 h1 {
   font-size: 3rem;
   font-weight: 500;
@@ -99,6 +103,7 @@ h3 {
 
 .input.button {
   cursor: pointer;
+  font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
   font-weight: 500;
   height: 2.625rem;
   padding: 0.5rem 0.75rem;
@@ -190,7 +195,7 @@ h3 {
 .question-page > .question-details > .avatar {
   border-radius: 5rem;
   height: 10rem;
-  margin: 0 0 0.5rem 0;
+  margin: 0;
 }
 
 .question-list {
@@ -226,6 +231,7 @@ h3 {
   background-color: #6d7380; /* gray (dark) */
   border-radius: 0.25rem;
   color: #fff;
+  font-weight: 400;
   margin: 0;
   padding: 0.125rem 0.5rem 0.25rem 0.5rem;
   white-space: nowrap;
@@ -235,15 +241,38 @@ h3 {
   background-color: #3bb273; /* green */
 }
 
+.question.question-answer > .question-option {
+  background-color: #2d7dd2; /* blue */
+  border: 0;
+  cursor: pointer;
+  font-size: inherit;
+  transition: box-shadow 0.15s ease-in-out;
+}
+
+.question-answer > .question-option:hover {
+  box-shadow: 0.125rem 0.125rem 0.5rem 0.0625rem rgba(0, 0, 0, 0.25);
+}
+
+.question-author {
+  color: #9196a0; /* gray (medium) */
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin: 1rem 0 0 0;
+}
+
 .question-stats {
   color: #9196a0; /* gray (medium) */
   font-size: 0.875rem;
   line-height: 1.25rem;
-  margin: 0.5rem 0 0 0;
+  margin: 0;
 }
 
 .question-stats > p {
   margin: 0.25rem 0 0 0;
+}
+
+.question-stats > p:first-child {
+  margin: 0;
 }
 
 /* Login

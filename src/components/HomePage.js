@@ -15,7 +15,7 @@ class Home extends React.Component {
     };
   }
 
-  handleClickPill = (e, tab) => {
+  onClickPill = (e, tab) => {
     e.preventDefault();
 
     this.setState({
@@ -46,13 +46,13 @@ class Home extends React.Component {
       <div className="home-page">
         <ul className="pill-list">
           <li className={this.state.tab === UNANSWERED ? 'pill-list-item active' : 'pill-list-item'}>
-            <button className="pill-button red" onClick={e => this.handleClickPill(e, UNANSWERED)}>
+            <button className="pill-button red" onClick={e => this.onClickPill(e, UNANSWERED)}>
               Unanswered Questions
             </button>
           </li>
 
           <li className={this.state.tab === ANSWERED ? 'pill-list-item active' : 'pill-list-item'}>
-            <button className="pill-button green" onClick={e => this.handleClickPill(e, ANSWERED)}>
+            <button className="pill-button green" onClick={e => this.onClickPill(e, ANSWERED)}>
               Answered Questions
             </button>
           </li>

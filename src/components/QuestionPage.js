@@ -17,6 +17,7 @@ const QuestionPage = ({ authedUser, question, users}) => {
     <div className="question-page">
       <QuestionDetails
         answer={answer}
+        authedUser={authedUser}
         author={author}
         question={question}
         user={user}

@@ -1,22 +1,18 @@
 import React from 'react';
 
-import QuestionOption from './QuestionOption';
-
 const Question = ({ answer, question }) => (
   <div className="question">
     {'Would you rather '}
 
-    <QuestionOption
-      isAnswer={answer === 'optionOne'}
-      option={question.optionOne}
-    />
+    <span className={answer === 'optionOne' ? 'question-option answer' : 'question-option'}>
+      {question.optionOne.text}
+    </span>
 
     {' or '}
 
-    <QuestionOption
-      isAnswer={answer === 'optionTwo'}
-      option={question.optionTwo}
-    />
+    <span className={answer === 'optionTwo' ? 'question-option answer' : 'question-option'}>
+      {question.optionTwo.text}
+    </span>
 
     {' ?'}
   </div>

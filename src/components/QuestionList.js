@@ -13,4 +13,5 @@ const QuestionList = ({ questionIds, questions, user }) => (
     ))}
   </ul>
 );
+
 export default QuestionList;

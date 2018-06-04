@@ -1,10 +1,11 @@
 import React, { Fragment } from 'react';
 
 import Question from './Question';
+import QuestionAnswer from './QuestionAnswer';
 
 import { formatTimestamp } from '../utils/helpers';
 
-const QuestionDetails = ({ answer, author, question, user }) => {
+const QuestionDetails = ({ answer, authedUser, author, question, user }) => {
   const optionOneText = question.optionOne.text;
   const optionTwoText = question.optionTwo.text;
 
@@ -13,8 +14,8 @@ const QuestionDetails = ({ answer, author, question, user }) => {
 
   const totalVotes = optionOneVotes + optionTwoVotes;
 
-  const optionOnePercentage = (100.0 * optionOneVotes) / totalVotes;
-  const optionTwoPercentage = (100.0 * optionTwoVotes) / totalVotes;
+  const optionOnePercentage = Math.round((100.0 * optionOneVotes) / totalVotes);
+  const optionTwoPercentage = Math.round((100.0 * optionTwoVotes) / totalVotes);
 
   const authorName = author.id === user.id ? 'you' : author.name;
 
@@ -26,21 +27,32 @@ const QuestionDetails = ({ answer, author, question, user }) => {
         src={author.avatarURL}
       />
 
-      <Question
-        answer={answer}
-        question={question}
-      />
+      <div className="question-author">
+        Asked by {authorName} on {formatTimestamp(question.timestamp)}
+      </div>
 
-      <div className="question-stats">
-        {answer !== undefined &&
+      {answer
+        ? (
+          <Question
+            answer={answer}
+            question={question}
+          />
+        ) : (
+          <QuestionAnswer
+            authedUser={authedUser}
+            question={question}
+          />
+        )
+      }
+
+      {answer &&
+        <div className="question-stats">
           <Fragment>
             <p>{`${optionOneVotes} of ${totalVotes} (${optionOnePercentage}%) would rather ${optionOneText}`}</p>
             <p>{`${optionTwoVotes} of ${totalVotes} (${optionTwoPercentage}%) would rather ${optionTwoText}`}</p>
           </Fragment>
-        }
-
-        <p>Asked by {authorName} on {formatTimestamp(question.timestamp)}</p>
-      </div>
+        </div>
+      }
     </div>
   );
 };
