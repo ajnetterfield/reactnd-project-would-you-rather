@@ -63,6 +63,15 @@ class Home extends React.Component {
           questions={questions}
           user={user}
         />
+
+        {questionIds.length === 0 &&
+          <p className="no-questions">
+            {this.state.tab === UNANSWERED
+              ? 'You have answered every question'
+              : "You haven't answered a question yet"
+            }
+          </p>
+        }
       </div>
     );
   }
