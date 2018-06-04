@@ -70,8 +70,16 @@ h3 {
 /* Utilities
 /******************************************************************************/
 
+.text-right {
+  text-align: right !important;
+}
+
+.w-1 {
+  width: 1% !important;
+}
+
 .w-100 {
-  width: 100%;
+  width: 100% !important;
 }
 
 /* Input
@@ -205,7 +213,7 @@ h3 {
 }
 
 .question-list > .question-list-item {
-  background-color: #ecedef;
+  background-color: #ecedef; /* gray (lighter) */
   display: block;
   margin-bottom: 1rem;
   transition: box-shadow 0.15s ease-in-out;
@@ -366,3 +374,40 @@ h3 {
   color: #fff;
 }
 
+/* Leaderboard
+/******************************************************************************/
+
+.leaderboard {
+  border-collapse: collapse;
+  font-size: 1.125rem;
+  width: 100%;
+}
+
+.leaderboard td,
+.leaderboard th {
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.leaderboard-header th {
+  border-bottom: 2px solid #c8cacf; /* gray (light) */
+  padding-top: 0;
+}
+
+.leaderboard-row {
+  border-bottom: 1px solid #c8cacf; /* gray (light) */
+}
+
+.leaderboard-row:hover {
+  background-color: #ecedef; /* gray (lighter) */
+}
+
+.leaderboard-row.highlight {
+  background-color: #ecedef; /* gray (lighter) */
+}
+
+.leaderboard-row .avatar {
+  border-radius: 1.5rem;
+  height: 3rem;
+  margin: 0;
+}

@@ -38,9 +38,9 @@ class Home extends React.Component {
       ? allQuestionIds.filter(x => user.answers[x] === undefined)
       : allQuestionIds.filter(x => user.answers[x] !== undefined);
 
-    const questionIds = filteredQuestionIds.sort((a, b) => {
-      return questions[b].timestamp - questions[a].timestamp;
-    });
+    const questionIds = filteredQuestionIds.sort((a, b) => (
+      questions[b].timestamp - questions[a].timestamp
+    ));
 
     return (
       <div className="home-page">
