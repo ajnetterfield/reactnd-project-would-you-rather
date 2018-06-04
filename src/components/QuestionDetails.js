@@ -5,7 +5,7 @@ import QuestionAnswer from './QuestionAnswer';
 
 import { formatTimestamp } from '../utils/helpers';
 
-const QuestionDetails = ({ answer, authedUser, author, question, user }) => {
+const QuestionDetails = ({ answer, authedUser, author, question }) => {
   const optionOneText = question.optionOne.text;
   const optionTwoText = question.optionTwo.text;
 

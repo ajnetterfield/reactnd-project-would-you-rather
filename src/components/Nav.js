@@ -7,6 +7,7 @@ import { handleLogout } from '../actions/authedUser';
 
 class Nav extends React.Component {
   handleClickLogout = (e) => {
+    e.preventDefault();
     this.props.handleLogout();
   }
 

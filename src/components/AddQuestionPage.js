@@ -15,7 +15,7 @@ class AddQuestion extends React.Component {
       optionOneText: '',
       optionTwoText: '',
       toHome: false
-    }
+    };
   }
 
   handleChange = (e) => {
