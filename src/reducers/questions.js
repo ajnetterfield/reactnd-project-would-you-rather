@@ -1,4 +1,5 @@
 import {
+  ADD_QUESTION,
   ANSWER_QUESTION,
   CLEAR_QUESTIONS,
   RECEIVE_QUESTIONS
@@ -6,6 +7,12 @@ import {
 
 export default function questions(state = null, action) {
   switch (action.type) {
+    case ADD_QUESTION:
+      return {
+        ...state,
+        [action.question.id]: action.question
+      };
+
     case ANSWER_QUESTION:
       return {
         ...state,

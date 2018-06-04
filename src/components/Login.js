@@ -64,7 +64,11 @@ class Login extends React.Component {
             </select>
           </div>
 
-          <input className="input button blue w-100" type="submit" value="Log in" />
+          <input
+            className={this.state.error ? 'input button red error w-100' : 'input button blue w-100'}
+            type="submit"
+            value="Log in"
+          />
         </form>
       </div>
     );

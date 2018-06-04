@@ -15,6 +15,7 @@ export const getUsers = () => (dispatch) => {
   return _getUsers()
     .then((users) => {
       dispatch(receiveUsers(users));
+    }).then(() => {
       dispatch(hideLoading());
     });
 };

@@ -3,7 +3,7 @@ import React, { Fragment } from 'react';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import AddQuestion from './AddQuestion';
+import AddQuestionPage from './AddQuestionPage';
 import HomePage from './HomePage';
 import Leaderboard from './Leaderboard';
 import Login from './Login';
@@ -35,7 +35,7 @@ class App extends React.Component {
                   <div className="content">
                     <Switch>
                       <Route path="/" exact component={HomePage} />
-                      <Route path="/add" component={AddQuestion} />
+                      <Route path="/add" component={AddQuestionPage} />
                       <Route path="/leaderboard" component={Leaderboard} />
                       <Route path="/questions/:question_id" component={QuestionPage} />
                       <Route component={NoMatch} />
@@ -56,11 +56,9 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = ({ authedUser }) => {
-  return {
-    authedUser
-  };
-};
+const mapStateToProps = ({ authedUser }) => ({
+  authedUser
+});
 
 const mapDispatchToProps = {
   getUsers
