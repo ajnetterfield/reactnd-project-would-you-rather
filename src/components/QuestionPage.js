@@ -4,7 +4,11 @@ import { connect } from 'react-redux';
 import NoMatch from './NoMatch';
 import QuestionDetails from './QuestionDetails';
 
-const QuestionPage = ({ authedUser, question, users}) => {
+const QuestionPage = ({ authedUser, loading, question, users }) => {
+  if (loading) {
+    return 'Loading...';
+  }
+
   if (question === undefined) {
     return <NoMatch />;
   }
@@ -27,6 +31,12 @@ const QuestionPage = ({ authedUser, question, users}) => {
 };
 
 const mapStateToProps = ({ authedUser, questions, users }, props) => {
+  if (questions === null) {
+    return {
+      loading: true
+    };
+  }
+
   const questionId = props.match.params.question_id;
 
   return {
