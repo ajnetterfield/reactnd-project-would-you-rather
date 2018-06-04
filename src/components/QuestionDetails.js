@@ -17,8 +17,6 @@ const QuestionDetails = ({ answer, authedUser, author, question, user }) => {
   const optionOnePercentage = Math.round((100.0 * optionOneVotes) / totalVotes);
   const optionTwoPercentage = Math.round((100.0 * optionTwoVotes) / totalVotes);
 
-  const authorName = author.id === user.id ? 'you' : author.name;
-
   return (
     <div className="question-details">
       <img
@@ -28,7 +26,7 @@ const QuestionDetails = ({ answer, authedUser, author, question, user }) => {
       />
 
       <div className="question-author">
-        Asked by {authorName} on {formatTimestamp(question.timestamp)}
+        {formatTimestamp(question.timestamp)} | {author.name}
       </div>
 
       {answer
